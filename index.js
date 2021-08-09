@@ -8,6 +8,7 @@ app.use('/', router)
 const port = process.env.PORT || 3000
 const host = process.env.HOST || "localhost";
 
-app.listen(port, () => {
-    console.log("App listening on port", port)
-}) 
+app.listen(port, host)
+app.on("listening", () => {
+    console.log('Express server started on port %s at %s', server.address().port, server.address().address);
+})
